@@ -1,6 +1,6 @@
 __WARNING! The project in beta!__
 # Isactive
-This [beets](http://beets.io/) plugin is supposed to be used with a third party service like [album-info.ru](http://beets.io/)(ru) notifies you about new releases of you favourite artists. 
+This [beets](http://beets.io/) plugin is supposed to be used with a third party service like [album-info.ru](http://album-info.ru/)(in Russian only currently) which notifies you about new releases of you favourite artists. 
 
 # How it works
 1. It dumps your DB before import command
