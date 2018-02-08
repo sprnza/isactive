@@ -4,9 +4,9 @@ This [beets](http://beets.io/) plugin is supposed to be used with a third party 
 
 # How it works
 1. It dumps your DB before import command
-1. After the import command it gets what artist have been added
-1. Check LastFM for the data regarding the artist activity (at this point most of errors occurs, not all artists have info like (1999-present) on their wikipage).
-1. Acts accordingly with found information and (optionally) saves artist name in the configured files
+1. After the import command it gets what artists have been added
+1. Check LastFM for the data regarding the artist activity (at this point most of errors occurs because not all artists have info like (1999-present) on their wikipage).
+1. Acts accordingly with found information and (optionally) saves artists' names in the configured files
 1. Returns a list of artist you can add to a release tracking service
 1. Returns a list of artist failed to obtain information with respective URL, so you can check them manually.
 
