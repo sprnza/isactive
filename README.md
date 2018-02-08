@@ -27,12 +27,12 @@ Add `isactive` section in your config.yaml. Currently supported options:
           dead:
 ```
 
-`auto` - default to `no`. Isactive will ask if you want to start checking process.
-`lastfmkey` and `lasfmsecret`: get them [here](https://www.last.fm/api/account/create). It won't work without ones.
-`dest:`
-    `alive`: file to save names of alive artists
-    `failed`: file to save names of artists failed to be processed.
-    `dead`: file to save names of dead artists
+`auto` - default to `no`. Isactive will ask if you want to start checking process.  
+`lastfmkey` and `lasfmsecret`: get them [here](https://www.last.fm/api/account/create). It won't work without ones.  
+`dest:`  
+    `alive`: file to save names of alive artists  
+    `failed`: file to save names of artists failed to be processed.  
+    `dead`: file to save names of dead artists  
 
 # TODO
 1. Check mandatory options missing.
