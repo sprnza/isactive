@@ -59,10 +59,10 @@ class isactive(BeetsPlugin):
                 new_artists.append((album.albumartist, album.mb_albumartistid))
         if len(new_artists) > 0:
             check_choise=""
-            if self.config['auto'].get() == "no":
+            if not self.config["auto"].get():
                 while check_choise not in ['a', 'n']:
                     check_choise = input("\n\nIsactive plugin: \n"+str(len(new_artists))+" new artists found. Would you like to start is[a]ctive check or [n]ot? Default: a ") or 'a'
-            if self.config['auto'] == "yes" or check_choise == 'a':
+            if self.config["auto"].get() or check_choise == 'a':
                 print("\n\nIsactive plugin: checking just imported artists has started.")
                 for artist in new_artists:
                     while True:
@@ -80,14 +80,14 @@ class isactive(BeetsPlugin):
                     failed.append([artist[0], "URL not found"])
                 elif res[0] == "artist_not_found":
                     failed.append([artist[0], "Artist not found"])
-                elif res[0] == "date_not_found":
+                elif res[0] == "dates_not_found":
                     failed.append([artist[0], "Dates not found", res[2]])
                 
                 df=""
                 if len(alive) > 0:
                     if self.config["dest"]["alive"].exists():
                         dest_file=self.config["dest"]["alive"].get()
-                        df = open(os.path.expanduser(af), "a")
+                        df = open(os.path.expanduser(dest_file), "a")
                     else:
                         print("WARNING! A file for alive artists is not set! You'll loose the information once you close this window!")
                     print("It appears that these artists are active and could be tracked for new albums:")
@@ -102,7 +102,7 @@ class isactive(BeetsPlugin):
                 if len(dead) > 0:
                     if self.config["dest"]["dead"].exists():
                         dest_file=self.config["dest"]["dead"].get()
-                        df=open(os.path.expanduser(df), "a")
+                        df=open(os.path.expanduser(dest_file), "a")
                     else:
                         print("WARNING! A file for dead artists is not set! You'll loose the information once you close this window!")
                     print("It appears that these artists are dead:")
@@ -130,6 +130,7 @@ class isactive(BeetsPlugin):
                         df.close()
                 print("Finished.")
             else:
+                print("Auto config is :" + auto)
                 print("It's not a bad choice either!")
         else:
             print("Isacive plugin: no new artists have been found")
